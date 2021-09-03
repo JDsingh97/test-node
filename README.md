@@ -1,29 +1,39 @@
-# README #
+# TURF WAR BE
 
-This README would normally document whatever steps are necessary to get your application up and running.
+# File and folder Naming conventions
 
-### What is this repository for? ###
+- Folder and file name will be singular and follow `kebab-case`
+- Classes and interfaces Names will be singular and follow `PascalCasing`
+- Any global constants or environment variables are in `all-caps` and follow `SNAKE_CASE`
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+For more details onto casing refer [here](https://medium.com/better-programming/string-case-styles-camel-pascal-snake-and-kebab-case-981407998841)
 
-### How do I get set up? ###
+# API
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+## Add new API
 
-### Contribution guidelines ###
+In order to add a new API resource,
 
-* Writing tests
-* Code review
-* Other guidelines
+- create a new controller in folder `src/app/controllers`
+- in `src/app/routes` folder, add the resource in `index.ts` file and create another file for the routes of a particular resource. This file be then used in `index.ts` for mapping the resource and the routes.
+- For API validation create a validator file in `src/app/validators` folder. This file should contain only the Joi object. For use of that object refer to `src/app/routes/userRoutes.ts`
 
-### Who do I talk to? ###
+## API Docs
 
-* Repo owner or admin
-* Other community or team contact
+Swagger is to be used for API documentation.
+
+# Project Setup
+
+To setup the project, all you need to do is
+`docker-compose up -d`
+
+# DB
+
+This project uses typeorm for orm to connect and execute queries on DB. It is configured to use postgres as its database.
+
+This setup is using sync option of Typeorm. So DB is automatically updated with updates in our models
+
+# Module Aliases
+
+This project setup uses some module aliases for the ease in readbility and importing of other modules.
+Refer to `_moduleAliases` section in `package.json` for currently created module aliases. These aliases are workable in src folder only as of now
