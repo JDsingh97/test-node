@@ -1,10 +1,11 @@
-# TURF WAR BE
+# ts-bp BE
 
 # File and folder Naming conventions
 
 - Folder and file name will be singular and follow `kebab-case`
 - Classes and interfaces Names will be singular and follow `PascalCasing`
 - Any global constants or environment variables are in `all-caps` and follow `SNAKE_CASE`
+- Variable name should be `camelCase`
 
 For more details onto casing refer [here](https://medium.com/better-programming/string-case-styles-camel-pascal-snake-and-kebab-case-981407998841)
 
@@ -24,8 +25,21 @@ Swagger is to be used for API documentation.
 
 # Project Setup
 
-To setup the project, all you need to do is
-`docker-compose up -d`
+To setup the project, all you need to do is :
+- Copy default.env to .env and make necessary changes `cp default.env .env`
+- (Optional but recommended) Search whole project and replace `ts-bp` with your app name i.e APPNAME  (this will make changes in DOckerfile & compose file)
+- `docker-compose up -d`
+- High level flow would be `routes > validators >  controllers > services > repository > model / entity`
+- There are sample services files just for understanding code flow / structure. Build one service of your onw and then remove them.
+-
+
+# Run Migration
+- To run migration `npm run migrate`
+
+
+# Deployment Changes
+- Make changes in .yml files present in root folder (your ECR repo etc)
+
 
 # DB
 
