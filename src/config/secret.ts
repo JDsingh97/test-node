@@ -28,6 +28,7 @@ export const FROM_EMAIL = process.env.FROM_EMAIL;
 export const EMAIL_APP_PASSWORD = process.env.EMAIL_APP_PASSWORD;
 export const AWS_SES_API_VERSION = process.env.AWS_SES_API_VERSION;
 
+export const TIMEZONE = process.env.TIMEZONE;
 
 export const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
 

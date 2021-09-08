@@ -1,5 +1,5 @@
 {
-  "name": "ts bp",
+  "name": "ts-bp",
   "version": "0.1.0",
   "description": "backend ",
   "main": "dist/server.js",
