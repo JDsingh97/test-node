@@ -30,7 +30,7 @@ class BaseRoute {
 
     this.router.post(
       "/register",
-      this.httpRequestValidator.validate("body", register),
+      // this.httpRequestValidator.validate("body", register),
       this.baseController.register
     );
 

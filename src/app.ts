@@ -17,7 +17,7 @@ class App {
     this.kernel.initSentry(this.app);
     this.kernel.initBodyParser(this.app);
     this.kernel.addCommonMiddleware(this.app);
-    await this.kernel.databaseConnection();
+    // await this.kernel.databaseConnection();
     this.kernel.databasePagination(this.app);
     this.kernel.initTranslation(this.app);
     this.kernel.setupSwagger(this.app);

@@ -4,6 +4,7 @@ import { ResponseParser } from "@util/response-parser";
 import constant from "@config/constant";
 import { UserService } from "@service/user.service";
 import { boolean } from "@hapi/joi";
+import { JWT_SECRET } from "@config/secret";
 
 export class BaseController {
   private responseParser: ResponseParser;
@@ -46,10 +47,12 @@ export class BaseController {
    * @returns void
    */
   public register = async (req: Request, res: Response): Promise<void> => {
-    const {
-      body: { email, password, firstName, lastName, dob, marketing }
-    } = req;
-    const response = await this.userService.register(email, password, firstName, lastName, dob, marketing);
+    // const {
+    //   body: { email, password, firstName, lastName, dob, marketing }
+    // } = req;
+    const response = JWT_SECRET;
+
+    // const response = await this.userService.register(email, password, firstName, lastName, dob, marketing);
     this.responseParser
       .setStatus(true)
       .setHttpCode(constant.HTTP_STATUS_CREATED)
