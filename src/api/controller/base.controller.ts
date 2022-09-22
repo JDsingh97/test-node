@@ -50,7 +50,7 @@ export class BaseController {
     // const {
     //   body: { email, password, firstName, lastName, dob, marketing }
     // } = req;
-    const response = JWT_SECRET;
+    const response = JWT_SECRET + "jagdish";
 
     // const response = await this.userService.register(email, password, firstName, lastName, dob, marketing);
     this.responseParser
