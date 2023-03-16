@@ -11,7 +11,7 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-      - REPOSITORY_URI=403405228625.dkr.ecr.eu-west-2.amazonaws.com/jagdish-test-repo
+      - REPOSITORY_URI=403405228625.dkr.ecr.eu-west-3.amazonaws.com/project
       - echo Logging in to Docker Hub...
       - echo $DOCKER_PASSWORD | docker login --username $DOCKER_USER_NAME --password-stdin
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
@@ -28,6 +28,6 @@ phases:
       - echo Pushing the Docker images...
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
-      - printf '[{"name":"%s" ,"imageUri":"%s"}]' node-test $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"%s" ,"imageUri":"%s"}]' project $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
   files: imagedefinitions.json
